@@ -26,7 +26,20 @@ html, body {
   position: relative;
 }
 
+.lead a{
+  color: inherit;
+  text-decoration: none;
+}
 
+.lead :hover{
+  color: #9bafcd;
+  cursor: pointer;
+}
+
+.carousel-inner img {
+  height: 100vh;
+  object-fit: cover;
+}
 
 
 
