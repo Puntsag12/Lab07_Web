@@ -2,12 +2,14 @@
   position: fixed;
   top: 0;
   width: 100%;
-  transition: transform 0.3s ease-in-out; /* Smooth slide effect */
-  transform: translateY(-100%); /* Hides it off-screen */
+  transition: transform 0.3s ease-in-out; 
+  transform: translateY(-100%); 
   z-index: 1000;
+  border-style: solid;
+  border-color: #113b7e;
 }
 
-/* This class will be added by JavaScript */
+
 .navbar-visible {
   transform: translateY(0);
 }

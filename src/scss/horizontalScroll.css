@@ -1,0 +1,45 @@
+.looping {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.looping-content {
+  display: inline-flex;
+  gap: 50px;
+  animation: scroll 30s linear infinite;
+}
+
+.looping-content span {
+  font-size: 30px;
+}
+
+.stat {
+  text-align: center;
+}
+.stat h2 {
+  color: #2c4a7a;
+  font-weight: 300;
+}
+
+.stat p {
+  color: #2c4a7a;
+  font-size: 14px;
+  margin-bottom: 1px;
+}
+
+.line {
+  width: 40px;
+  height: 2px;
+  background-color: #113b7e; 
+  margin: 8px auto 12px;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
