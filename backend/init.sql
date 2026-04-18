@@ -18,18 +18,18 @@ CREATE TABLE IF NOT EXISTS page_content (
     section_name VARCHAR(50),
     content_key VARCHAR(50),
     content_value TEXT
-)
+);
 
 INSERT INTO university_stats (category, value) VALUES 
 ('Undergraduate Student', 15749),
-('Master\' s and Doctorate Students', 4172),
+('Master\'s and Doctorate Students', 4172),
 ('Teachers and Employees', 1445),
 ('Foreign Student', 510),
 ('Schools', 6),
 ('International Cooperation Partners', 320),
 ('Library Holdings', 360000);
 
-INSERT INTO page_content (section_name, content_key, content_values) VALUES
+INSERT INTO page_content (section_name, content_key, content_value) VALUES
 ('Hero', 'title_1', 'Leading Mongolia'),
 ('Hero', 'title_2', 'Competing in the world'),
 ('About', 'quote', '" We admire true knowledge, humanism and intelligence "'),

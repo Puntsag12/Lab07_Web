@@ -1,21 +1,31 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, send_from_directory
 from flask_cors import CORS
 import mysql.connector
+import os
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder = '/app/src')
 CORS(app)
-# Mongol vseg haruulah
-app.config['JSON_AS_ASCII'] = False 
 
+app.config['JSON_AS_ASCII'] = False 
 def get_db_connection():
     return mysql.connector.connect(
         host="db", 
         user="root", 
         password="root_password", 
-        database="num_db",
-        charset='utf8mb4',
-        use_unicode=True
+        database="num_db"
     )
+
+@app.route('/')
+def index():
+    return send_from_directory(app.static_folder, 'index.html')
+
+@app.route('/admin')
+def admin_page():
+    return send_from_directory(app.static_folder, 'admin.html')
+
+@app.route('/<path:path>')
+def static_proxy(path):
+    return send_from_directory(app.static_folder, path)
 
 @app.route('/api/stats', methods=['GET'])
 def get_stats():
@@ -27,37 +37,6 @@ def get_stats():
         cursor.close()
         conn.close()
         return jsonify(data)
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
-
-@app.route('/api/content', methods=['GET'])
-def get_content():
-    try:
-        conn = get_db_connection()
-        cursor = conn.cursor(dictionary=True)
-        cursor.execute("SELECT content_key, content_value FROM page_content")
-        data = cursor.fetchall()
-        content_dict = {item['content_key']: item['content_value'] for item in data}
-        cursor.close()
-        conn.close()
-        return jsonify(content_dict)
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
-
-@app.route('/api/login', methods=['POST'])
-def login():
-    auth = request.json
-    try:
-        conn = get_db_connection()
-        cursor = conn.cursor(dictionary=True)
-        cursor.execute("SELECT * FROM admins WHERE username=%s AND password=%s", 
-                       (auth['username'], auth['password']))
-        user = cursor.fetchone()
-        cursor.close()
-        conn.close()
-        if user:
-            return jsonify({"success": True, "token": "dummy-session-token"})
-        return jsonify({"success": False, "message": "Нэвтрэх нэр эсвэл нууц үг буруу"}), 401
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
@@ -76,19 +55,6 @@ def create_stat():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-@app.route('/api/stats/<int:id>', methods=['DELETE'])
-def delete_stat(id):
-    try:
-        conn = get_db_connection()
-        cursor = conn.cursor()
-        cursor.execute("DELETE FROM university_stats WHERE id = %s", (id,))
-        conn.commit()
-        cursor.close()
-        conn.close()
-        return jsonify({"message": "Устгагдлаа"})
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
-
 @app.route('/api/stats/<int:id>', methods=['PUT'])
 def update_stat(id):
     data = request.json
@@ -104,5 +70,18 @@ def update_stat(id):
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+@app.route('/api/stats/<int:id>', methods=['DELETE'])
+def delete_stat(id):
+    try:
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        cursor.execute("DELETE FROM university_stats WHERE id = %s", (id,))
+        conn.commit()
+        cursor.close()
+        conn.close()
+        return jsonify({"message": "Устгагдлаа"})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5000, debug=True)

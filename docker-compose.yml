@@ -19,6 +19,9 @@ services:
       - "5000:5000"
     depends_on:
       - db
+    volumes:
+      - ./backend:/app
+      - ./src:/app/src
     environment:
       - DB_HOST=db
       - DB_NAME=num_db
