@@ -37,7 +37,6 @@ def get_content():
         cursor = conn.cursor(dictionary=True)
         cursor.execute("SELECT content_key, content_value FROM page_content")
         data = cursor.fetchall()
-        # Жагсаалтыг JavaScript-д ашиглахад хялбар болгож Object болгох
         content_dict = {item['content_key']: item['content_value'] for item in data}
         cursor.close()
         conn.close()
