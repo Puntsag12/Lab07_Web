@@ -2,92 +2,186 @@
 <html lang="mn">
 <head>
     <meta charset="UTF-8">
-    <title>NUM Admin Panel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NUM Admin Panel - CMS</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root { --num-blue: #003366; --num-gold: #c5a059; }
+        body { background-color: #f8f9fa; }
+        .navbar { background-color: var(--num-blue); color: white; }
+        .card { border: none; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .nav-tabs .nav-link.active { color: var(--num-blue); fw-bold; }
+        .sticky-top { top: 20px; }
+    </style>
 </head>
-<body class="bg-light p-5">
+<body>
+
+<nav class="navbar mb-4 shadow">
     <div class="container">
-        <h2>Удирдах хэсэг (CRUD)</h2>
-        <div class="card p-4 mb-4 shadow-sm">
-            <h4 id="formTitle">Мэдээлэл нэмэх</h4>
-            <input type="hidden" id="editId">
-            <div class="row g-3">
-                <div class="col-md-5">
-                    <input type="text" id="statLabel" class="form-control" placeholder="Тайлбар">
-                </div>
+        <span class="navbar-brand mb-0 h1">МУИС Удирдах Систем (CMS)</span>
+    </div>
+</nav>
+
+<div class="container pb-5">
+    <ul class="nav nav-tabs mb-4" id="adminTabs" role="tablist">
+        <li class="nav-item">
+            <button class="nav-link active font-weight-bold" id="stats-tab" data-bs-toggle="tab" data-bs-target="#stats">Статистик Тоонууд</button>
+        </li>
+        <li class="nav-item">
+            <button class="nav-link" id="content-tab" data-bs-toggle="tab" data-bs-target="#content">Хуудасны Бичвэр</button>
+        </li>
+    </ul>
+
+    <div class="tab-content" id="adminTabsContent">
+        
+        <div class="tab-pane fade show active" id="stats" role="tabpanel">
+            <div class="row">
                 <div class="col-md-4">
-                    <input type="number" id="statValue" class="form-control" placeholder="Утга">
+                    <div class="card p-4 sticky-top">
+                        <h5 id="formTitle">Шинэ мэдээлэл нэмэх</h5>
+                        <input type="hidden" id="editId">
+                        <div class="mb-3">
+                            <label class="small text-muted">Ангилал</label>
+                            <input type="text" id="statCategory" class="form-control" placeholder="Жишээ: Оюутны тоо">
+                        </div>
+                        <div class="mb-3">
+                            <label class="small text-muted">Утга</label>
+                            <input type="number" id="statValue" class="form-control" placeholder="0">
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-primary" id="saveBtn" onclick="saveStat()">Хадгалах</button>
+                            <button class="btn btn-light" id="cancelBtn" style="display:none;" onclick="clearStatForm()">Цуцлах</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-3">
-                    <button class="btn btn-primary w-100" id="saveBtn" onclick="saveData()">Хадгалах</button>
+                <div class="col-md-8">
+                    <div class="card p-4">
+                        <table class="table table-hover align-middle">
+                            <thead>
+                                <tr><th>Ангилал</th><th>Утга</th><th class="text-end">Үйлдэл</th></tr>
+                            </thead>
+                            <tbody id="stats-list"></tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <table class="table table-white shadow-sm">
-            <thead class="table-dark">
-                <tr><th>Тайлбар</th><th>Утга</th><th>Үйлдэл</th></tr>
-            </thead>
-            <tbody id="admin-list"></tbody>
-        </table>
+        <div class="tab-pane fade" id="content" role="tabpanel">
+            <div class="card p-4">
+                <div class="alert alert-info py-2">Хуудас бүрийн бичвэрийг эндээс шууд засварлах боломжтой.</div>
+                <div class="table-responsive">
+                    <table class="table table-bordered align-middle">
+                        <thead class="table-light">
+                            <tr>
+                                <th style="width: 15%">Хуудас / Хэсэг</th>
+                                <th style="width: 15%">Түлхүүр</th>
+                                <th>Агуулга</th>
+                                <th style="width: 10%">Үйлдэл</th>
+                            </tr>
+                        </thead>
+                        <tbody id="content-list"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
     </div>
+</div>
 
-    <script>
-        async function loadData() {
-            const res = await fetch('/api/stats');
-            const data = await res.json();
-            const list = document.getElementById('admin-list');
-            list.innerHTML = data.map(item => `
-                <tr>
-                    <td>${item.category}</td>
-                    <td>${item.value}</td>
-                    <td>
-                        <button class="btn btn-warning btn-sm" onclick="editMode(${item.id}, '${item.category}', ${item.value})">Засах</button>
-                        <button class="btn btn-danger btn-sm" onclick="deleteData(${item.id})">Устгах</button>
-                    </td>
-                </tr>
-            `).join('');
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // --- СТАТИСТИК ЛОГИК ---
+    async function loadStats() {
+        const res = await fetch('/api/stats');
+        const data = await res.json();
+        document.getElementById('stats-list').innerHTML = data.map(item => `
+            <tr>
+                <td>${item.category}</td>
+                <td><span class="badge bg-secondary p-2">${item.value.toLocaleString()}</span></td>
+                <td class="text-end">
+                    <button class="btn btn-sm btn-outline-warning" onclick="editStatMode(${item.id}, '${item.category}', ${item.value})">Засах</button>
+                    <button class="btn btn-sm btn-outline-danger" onclick="deleteStat(${item.id})">Устгах</button>
+                </td>
+            </tr>
+        `).join('');
+    }
+
+    async function saveStat() {
+        const id = document.getElementById('editId').value;
+        const category = document.getElementById('statCategory').value;
+        const value = document.getElementById('statValue').value;
+        const method = id ? 'PUT' : 'POST';
+        const url = id ? `/api/stats/${id}` : '/api/stats';
+
+        const res = await fetch(url, {
+            method: method,
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({ category, value })
+        });
+        if(res.ok) { clearStatForm(); loadStats(); }
+    }
+
+    function editStatMode(id, cat, val) {
+        document.getElementById('editId').value = id;
+        document.getElementById('statCategory').value = cat;
+        document.getElementById('statValue').value = val;
+        document.getElementById('formTitle').innerText = "Засварлах";
+        document.getElementById('cancelBtn').style.display = "block";
+    }
+
+    function clearStatForm() {
+        document.getElementById('editId').value = '';
+        document.getElementById('statCategory').value = '';
+        document.getElementById('statValue').value = '';
+        document.getElementById('formTitle').innerText = "Шинэ мэдээлэл нэмэх";
+        document.getElementById('cancelBtn').style.display = "none";
+    }
+
+    async function deleteStat(id) {
+        if(confirm('Устгах уу?')) {
+            await fetch(`/api/stats/${id}`, { method: 'DELETE' });
+            loadStats();
         }
+    }
 
-        async function saveData() {
-            const id = document.getElementById('editId').value;
-            const label = document.getElementById('statLabel').value;
-            const value = document.getElementById('statValue').value;
-            
-            const method = id ? 'PUT' : 'POST';
-            const url = id ? `/api/stats/${id}` : '/api/stats';
+    // --- КОНТЕНТ ЛОГИК ---
+    async function loadContent() {
+        const res = await fetch('/api/content');
+        const data = await res.json();
+        document.getElementById('content-list').innerHTML = data.map(item => `
+            <tr>
+                <td>
+                    <span class="badge bg-primary mb-1">${item.page_name}</span><br>
+                    <small class="text-muted">${item.section_name}</small>
+                </td>
+                <td class="small fw-bold">${item.content_key}</td>
+                <td>
+                    <textarea class="form-control form-control-sm" id="cnt-${item.id}" rows="2">${item.content_value}</textarea>
+                </td>
+                <td class="text-center">
+                    <button class="btn btn-success btn-sm" onclick="updateContent(${item.id})">💾</button>
+                </td>
+            </tr>
+        `).join('');
+    }
 
-            await fetch(url, {
-                method: method,
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({ label, value })
-            });
-            
-            clearForm();
-            loadData();
+    async function updateContent(id) {
+        const val = document.getElementById(`cnt-${id}`).value;
+        const res = await fetch(`/api/content/${id}`, {
+            method: 'PUT',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({ content_value: val })
+        });
+        if(res.ok) { 
+            const btn = event.target;
+            btn.innerText = "✅"; 
+            setTimeout(() => { btn.innerText = "💾"; }, 2000);
         }
+    }
 
-        function editMode(id, label, value) {
-            document.getElementById('editId').value = id;
-            document.getElementById('statLabel').value = label;
-            document.getElementById('statValue').value = value;
-            document.getElementById('formTitle').innerText = "Мэдээлэл засах";
-        }
+    window.onload = () => { loadStats(); loadContent(); };
+</script>
 
-        function clearForm() {
-            document.getElementById('editId').value = '';
-            document.getElementById('statLabel').value = '';
-            document.getElementById('statValue').value = '';
-            document.getElementById('formTitle').innerText = "Мэдээлэл нэмэх";
-        }
-
-        async function deleteData(id) {
-            if(confirm('Устгах уу?')) {
-                await fetch(`/api/stats/${id}`, { method: 'DELETE' });
-                loadData();
-            }
-        }
-        window.onload = loadData;
-    </script>
 </body>
 </html>

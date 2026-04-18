@@ -1,13 +1,13 @@
 export const siteData = {
     // Statistics
     university_stats: {
-        undergraduate_students: 15749,
-        graduate_students: 4172,
-        staff: 1445,
-        foreign_students: 510,
-        schools: 6,
-        partners: 320,
-        library_holdings: 360000
+        undergraduate_students: {category: "Undergraduate Students", value: 15749},
+        graduate_students: {category: "Graduate Students", value: 4172},
+        staff: {category: "Staff", value: 1445},
+        foreign_students: {category: "Foreign Students", values: 510},
+        schools: {category: "Schools", value: 6},
+        partners: {category: "Partners", value: 320},
+        library_holdings: {category: "Library Holdings", values: 360000}
     },
 
     // Index page
@@ -57,11 +57,11 @@ export const siteData = {
         header: "Academic Programs",
         intro: "NUM offers a wide range of undergraduate and graduate programs across various disciplines.",
         categories: {
-            undergraduate: { title: "Undergraduate", desc: "Students who have successfully completed secondary education and passed the national general examinations are admitted to" },
-            master: { title: "Master", desc: "The NUM offers 93 master degree programs approved by the Ministry of Education and Science. A regular master program at the NUM is comprised of 32 credits. The duration of master" },
-            doctor: { title: "Doctor", desc: "The NUM offers 44 PhD degree programs approved by the Ministry of Education and Science. A regular PhD program at the NUM is comprised of 30 credits for required" },
-            non_degree: { title: "Non degree", desc: "The Department of Mongolian language and culture provides a Mongolian language program for exchange students who wish to improve their Mongolian language, explore" },
-            exchange: { title: "Exchange", desc: "Suppose nominated students intend to take lectures and courses in an undergraduate program (please keep in mind that the majority of the lectures and courses are held in Mongolian)." }
+            undergraduate: { title: "Undergraduate", desc: "Students who have successfully completed secondary education and passed the national <span class = text-body-tertiary> general examinations are admitted to</span>" },
+            master: { title: "Master", desc: "The NUM offers 93 master degree programs approved by the Ministry of Education and Science. A regular master program at the NUM is comprised <span class = text-body-tertiary> of 32 credits. The duration of master" },
+            doctor: { title: "Doctor", desc: "The NUM offers 44 PhD degree programs approved by the Ministry of Education and Science. A regular PhD program at <span class = text-body-tertiary> the NUM is comprised of 30 credits for required" },
+            non_degree: { title: "Non degree", desc: "The Department of Mongolian language and culture provides a Mongolian language program for exchange students who wish to <span class = text-body-tertiary> improve their Mongolian language, explore" },
+            exchange: { title: "Exchange", desc: "Suppose nominated students intend to take lectures and courses in an undergraduate program (please keep in mind that the majority of the lectures <span class = text-body-tertiary> and courses are held in Mongolian)." }
         }
     },
 
@@ -179,3 +179,5 @@ export const siteData = {
         application_period: { fall: "May 1st - July 1st (each year)", spring: "October 1st - December 1st (each year)" }
     }
 };
+
+export default siteData;
