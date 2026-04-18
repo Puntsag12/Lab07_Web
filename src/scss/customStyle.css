@@ -17,7 +17,7 @@ html, body {
 }
 
 .image-section {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://portal.num.edu.mn/en/Content/image/muis.png');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://lh3.googleusercontent.com/gps-cs-s/APNQkAGbvhAV378loBXZbI2tKONyueADhlm87S2sKBnNsg8j1peyWokhZDRS9dgFL3_FMrYcRsX41kg_KVvQyQ8l8J3L0sKFY8jDahJfdanrLrE26Q3RGvspXDxxSjYRRDNjeK8ymmlfNugJeqUy=s1360-w1360-h1020-rw');
   background-size: cover;      
   background-position: center; 
   height: 100vh;               
