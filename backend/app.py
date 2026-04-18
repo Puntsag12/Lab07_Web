@@ -30,6 +30,21 @@ def get_stats():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+@app.route('/api/content', methods=['GET'])
+def get_content():
+    try:
+        conn = get_db_connection()
+        cursor = conn.cursor(dictionary=True)
+        cursor.execute("SELECT content_key, content_value FROM page_content")
+        data = cursor.fetchall()
+        # Жагсаалтыг JavaScript-д ашиглахад хялбар болгож Object болгох
+        content_dict = {item['content_key']: item['content_value'] for item in data}
+        cursor.close()
+        conn.close()
+        return jsonify(content_dict)
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
 @app.route('/api/login', methods=['POST'])
 def login():
     auth = request.json

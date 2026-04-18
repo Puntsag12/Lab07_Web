@@ -13,9 +13,27 @@ CREATE TABLE IF NOT EXISTS university_stats (
     value INT NOT NULL
 );
 
+CREATE TABLE IF NOT EXISTS page_content (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    section_name VARCHAR(50),
+    content_key VARCHAR(50),
+    content_value TEXT
+)
+
 INSERT INTO university_stats (category, value) VALUES 
-('Оюутны тоо', 25000),
-('Багш нарын тоо', 1200),
-('Судалгааны ажил', 450);
+('Undergraduate Student', 15749),
+('Master\' s and Doctorate Students', 4172),
+('Teachers and Employees', 1445),
+('Foreign Student', 510),
+('Schools', 6),
+('International Cooperation Partners', 320),
+('Library Holdings', 360000);
+
+INSERT INTO page_content (section_name, content_key, content_values) VALUES
+('Hero', 'title_1', 'Leading Mongolia'),
+('Hero', 'title_2', 'Competing in the world'),
+('About', 'quote', '" We admire true knowledge, humanism and intelligence "'),
+('About', 'description_1', 'The National University of Mongolia founded in 1942 is the oldest university in Mongolia...'),
+('About', 'description_2', 'Graduates of the NUM have had and will continue to play a leading role...');
 
 INSERT INTO admins (username, password) VALUES ('admin', 'num123');
