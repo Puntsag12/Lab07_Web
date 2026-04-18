@@ -17,7 +17,6 @@ const updateTexts = () => {
         
         if (value) {
             if (Array.isArray(value)) {
-                // Хоосон утгуудыг шүүж утгатай мөрүүдийг л авна
                 const cleanArray = value.filter(item => item && item.trim() !== "");
 
                 if (displayType === 'list') {
@@ -27,7 +26,6 @@ const updateTexts = () => {
                     el.innerHTML = cleanArray.map(item => `<p class="mb-3">${item}</p>`).join('');
                 }
             } else {
-                // Array биш бол шууд утгыг нь онооно
                 el.innerHTML = value;
             }
         }
