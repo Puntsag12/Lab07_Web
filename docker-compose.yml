@@ -1,25 +1,28 @@
 version: '3.8'
+
 services:
   db:
-    image: postgres:15
-    container_name: postgres_db
+    image: mysql:8.0
+    restart: always
     environment:
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: school_db
+      MYSQL_DATABASE: num_db
+      MYSQL_ROOT_PASSWORD: root_password
     ports:
-      - "5432:5432"
+      - "3307:3306"
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - db_data:/var/lib/mysql
+      - ./backend/init.sql:/docker-entrypoint-initdb.d/init.sql
 
   backend:
-    build: .
+    build: ./backend
     ports:
       - "5000:5000"
     depends_on:
       - db
     environment:
-      DATABASE_URL: postgresql://user:password@db:5432/school_db
+      - DB_HOST=db
+      - DB_NAME=num_db
+      - DB_PASS=root_password
 
 volumes:
-  postgres_data:
+  db_data:
