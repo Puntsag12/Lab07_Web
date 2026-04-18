@@ -1,0 +1,39 @@
+.visa-container{
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  height: 2500px;
+  margin-top: 100px;
+}
+
+.another-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.heading h1{
+  font-weight: 300;
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+}
+.parent h5, p{
+  font-weight: 300;
+}   
+
+.div1 {
+  grid-column: span 2 / span 2;
+  grid-row: span 5 / span 5;
+  justify-content: center;
+  align-content: center;
+}
+
+.div2 {
+  grid-column: span 4 / span 4;
+  grid-row: span 5 / span 5;
+  grid-column-start: 3;
+}
+
+
