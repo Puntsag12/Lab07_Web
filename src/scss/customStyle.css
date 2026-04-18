@@ -10,11 +10,6 @@ html, body {
   background-color: #f1f3f7;
 }
 
-.dotted-bg-light {
-  background-color: #f8f9fa; 
-  background-image: radial-gradient(#dee2e6 1px, transparent 0);
-  background-size: 30px 30px; 
-}
 
 .image-section {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://lh3.googleusercontent.com/gps-cs-s/APNQkAGbvhAV378loBXZbI2tKONyueADhlm87S2sKBnNsg8j1peyWokhZDRS9dgFL3_FMrYcRsX41kg_KVvQyQ8l8J3L0sKFY8jDahJfdanrLrE26Q3RGvspXDxxSjYRRDNjeK8ymmlfNugJeqUy=s1360-w1360-h1020-rw');
@@ -32,7 +27,6 @@ html, body {
 }
 
 .lead :hover{
-  color: #9bafcd;
   cursor: pointer;
 }
 

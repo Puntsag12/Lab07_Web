@@ -1,0 +1,53 @@
+
+
+.custom-flex{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+.custom-flex a{
+  color: inherit;
+  text-decoration: none;
+}
+
+.info-card{
+  background-color: #113b7e;
+  height: 200px;
+  width: 200px;
+  border-radius: 5px;
+  margin: 10px;
+  cursor: pointer;
+  padding-top: 40px;
+}
+.info-card p{
+  color: white;
+  font-size: 20px;
+  margin-top: 8px;
+}
+
+.youtube-info-card{
+  background-color: #113b7e;
+  height: 200px;
+  width: 200px;
+  border-radius: 5px;
+  margin: 10px;
+  cursor: pointer;
+  padding-top: 10px;
+}
+
+.youtube-info-card p{
+  color: white;
+  font-size: 18px;
+  margin-top: 8px;
+}
+
+.icon-size{
+  height: 80px;
+  width: 80px;
+  
+}
+
+.info-card:hover, .youtube-info-card:hover{
+  opacity: 0.5;
+}
