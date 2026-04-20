@@ -27,6 +27,11 @@
   border-radius: 4px;
   padding: 20px;
 }
+.dorm-icon{
+  height: 50px;
+  width: 50px;
+  padding-bottom: 8px;
+}
 
 .custom-btn {
   background-color: #113b7e; 
