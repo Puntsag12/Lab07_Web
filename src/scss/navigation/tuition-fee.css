@@ -1,0 +1,17 @@
+
+
+.fee-container{
+  margin-top:100px;
+  height: 1250px;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+}
+.fee-container h1, th, tr, td{
+  font-weight: 300;
+}
+
+.icon{
+  height: 50px;
+  width: 50px;
+  padding-bottom: 8px;
+}
