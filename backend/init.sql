@@ -258,4 +258,167 @@ INSERT INTO page_content (page_name, section_name, content_key, content_value) V
 -- application period
 ('doctor', 'Doctor', 'application_period_title', 'ONLINE APPLICATION PERIOD'),
 ('doctor', 'Doctor', 'period_fall', 'Fall semester: May 1st - July 1st (each year)'),
-('doctor', 'Doctor', 'period_spring', 'Spring semester: October 1st - December 1st (each year)');
+('doctor', 'Doctor', 'period_spring', 'Spring semester: October 1st - December 1st (each year)'),
+
+-- CAMPUS
+('campus', 'Campus', 'title', 'Campus life'),
+('campus', 'Campus', 'accommodation', 'Accommodation'),
+('campus', 'Campus', 'p1', 'There are five student dormitories - one for international students and scholars with capacity of 160 persons and four others for local students with capacity of 1200 persons. Students from different countries spend their joyful and challenging years of their student’s life with their common goal of studying there. It is a safe place to live and rooms are furnished. Student affairs and complaints are resolved by a dormitory manager.'),
+('campus', 'Campus', 'p2', 'International students contact the Student and Alumni Affairs office and the Registrar Office in advance to arrange a room at the dormitory. As the dormitory for international students has limited number of rooms, earlier booking is advised. The dormitory is guaranteed for government funded students and incoming exchange students. The dormitory is guaranteed for government funded students and inbound exchange students. There are five student dormitories - one for international students and scholars with capacity of 160 persons and four others for local students with capacity of 1200 persons. It is a safe place to live and rooms are well equipped with bed, tables, desks, internet access. Dormitory manager supports a variety of orientation and counseling services.'),
+('campus', 'Housing', 'th1', 'International Student Housing'),
+('campus', 'Room', 'th2', 'Room capacity'),
+('campus', 'Monthly', 'th3', 'Monthly fee'),
+('campus', 'Annual', 'th4', 'Annual fee'),
+('campus', 'Housing1', 'td', '4th floor of building I, all floors of building 4'),
+('campus', 'Housing1', 'capacity1', '1 person'),
+('campus', 'Housing1', 'monthly1', '467.000 MNT'),
+('campus', 'Housing1', 'annual1', '4.670.000 MNT'),
+('campus', 'Housing1', 'capacity2', '2 person'),
+('campus', 'Housing1', 'monthly2', '234.000 MNT'),
+('campus', 'Housing1', 'annual2', '2.340.000 MNT'),
+('campus', 'Housing1', 'capacity3', '3 person'),
+('campus', 'Housing1', 'monthly3', '159.000 MNT'),
+('campus', 'Housing1', 'annual3', '1.590.000 MNT'),
+('campus', 'Housing2', 'td', 'Masters and doctoral students /4th floor of Building II/'),
+('campus', 'Housing2', 'capacity1', '1 person'),
+('campus', 'Housing2', 'monthly1', '584.000 MNT'),
+('campus', 'Housing2', 'annual1', '5.840.000 MNT'),
+('campus', 'Housing2', 'capacity2', '2 person'),
+('campus', 'Housing2', 'monthly2', '2.920.000 MNT'),
+
+-- Room condition
+('campus', 'room_condition', 'title', 'Room contidion')
+('campus', 'room_condition', 'li1', 'two rooms in one block'),
+('campus', 'room_condition', 'li2', 'shared bathroom (between 2 rooms)'),
+('campus', 'room_condition', 'li3', 'painted floor withour carpet'),
+
+-- Room facilities
+('campus', 'room_facilities', 'title', 'Room facilities'),
+('campus', 'room_facilities', 'li1', 'bed'), 
+('campus', 'room_facilities', 'li2', 'chair'), 
+('campus', 'room_facilities', 'li3', 'desk'), 
+('campus', 'room_facilities', 'li4', 'wardrobe'), 
+('campus', 'room_facilities', 'li5', 'bed set'),
+('campus', 'room_facilities', 'li6', 'two rooms'),
+
+-- Common facilities
+('campus', 'common_facilities', 'title', 'Common facilities'),
+('campus', 'common_facilities', 'li1', 'shared kitchen'),
+('campus', 'common_facilities', 'li2', 'shower'),
+('campus', 'common_facilities', 'li3', 'laundry'),
+
+
+-- VISA
+('visa', 'Visa', 'title', 'Visa'),
+
+-- Invitation /visa permit/
+('visa', 'title1', 'title', 'Invitation /visa permit/'),
+('visa', 'title1', 'p1', 'An applicant who has obtained an acceptance letter or letter of invitation from the National University of Mongolia will receive a four-digit code for applying visa by e-mail. Applicant should contact Embassy or Consulate of Mongolia in home country. After reporting the received code to the embassy or consulate, the visa to enter Mongolia will be issued. Please note that you do not need a visa to enter Mongolia if you have a residence permit in Mongolia or already issued for a work or corporate visa at the time of applying to the National University of Mongolia. Please note that visa may not be issued if you have previously violated visa or residence permit legislation during your stay in Mongolia.'),
+
+-- Temporary registration
+('visa', 'Visa', 'title2', 'Temporary registration'),
+('visa', 'title2', 'p1', 'According to Article 24 of the Regulation on the Legal Status of Foreign Citizens, students must within 3 working days after entering Mongolia come to the Student and Alumni Office of NUM to get registered at Immigration Office.'),
+('visa', 'title2', 'p2', 'Necessary documents:'),
+('visa', 'title2', 'p3', '1. original passport'),
+('visa', 'title2', 'p4', '2. 1 ID photo (4x6 size)'),
+('visa', 'title2', 'p5', '3. 1500 MNT'),
+('visa', 'title2', 'p6', 'Please note that if you do not get registered to the Mongolian Immigration Office within 7 working days, you will be fined 2,500,000 MNT and will not be able to obtain a residence permit in the future.'),
+
+-- Residence permit
+('visa', 'Visa', 'title3', 'Residence permit'),
+('visa', 'title3', 'p1', 'According to Article 27.2.5 of the Regulation on the Legal Status of Foreign Citizens, student must obtain a residence permit or certificate of alien registration within 14 calendar days after registration. To obtain a residence permit, student must come to Student and Alumni Office with the required documents.'),
+('visa', 'title3', 'p2', 'Necessary documents:'),
+('visa', 'title3', 'p3', '1. original passport'),
+('visa', 'title3', 'p4', '2. copy of passport'),
+('visa', 'title3', 'p5', '3. 1 ID photo (4x6 size)'),
+('visa', 'title3', 'p6', '4. current residing address reference'),
+('visa', 'title3', 'p7', '5. application form for a residence permit'),
+('visa', 'title3', 'p8', '6. 36,500 MNT.'),
+('visa', 'title3', 'p9', 'Please note that if you do not issue documents within the specified time, you will be liable and pay large sum of fine according to the law.'),
+
+-- Residence permit extension
+('visa', 'Visa', 'title4', 'Residence permit extension'),
+('visa', 'title4', 'p1', 'Student must apply to residence permit extension prior to at least 30 days before residence permit expiry. To apply for extension, bring following documents to Student and Alumni Office:'),
+('visa', 'title4', 'p2', 'Necessary documents:'),
+('visa', 'title4', 'p3', '1. original passport'),
+('visa', 'title4', 'p4', '2. copy of passport'),
+('visa', 'title4', 'p5', '3. 1 ID photo (4x6 size)'),
+('visa', 'title4', 'p6', '4. current residing address reference'),
+('visa', 'title4', 'p7', '5. application form for a residence permit'),
+('visa', 'title4', 'p8', '6. original residence /alien/ card'),
+('visa', 'title4', 'p9', '7. 65000 MNT'),
+
+-- Cancellation of Residence permit
+('visa', 'Visa', 'title5', 'Cancellation of Residence permit'),
+('visa', 'title5', 'p1', 'Cancellation of residence permit shall be issued within 4 business days before residence permit expires when international student intends to leave Mongolia. Student must bring following documents 5 days before leaving Mongolia to Student and Alumni Office:'),
+('visa', 'title5', 'p2', '1. Original passport'),
+('visa', 'title5', 'p3', '2. Original residence card'),
+
+-- Re-entry visa permit
+('visa', 'Visa', 'title6', 'Visa permit transfer'),
+('visa', 'title6', 'p1', 'Foreigners enrolled in the NUM non-degree program will not be transferred to another school, and please note that the NUM’s invitation will be revoked if you decide to transfer'),
+
+
+-- Tuition Fee
+('tuition-fee', 'Tuition-fee', 'title1', 'Tuition Fee'),
+('tuition-fee', 'title1', 'th1', 'PROGRAMS'),
+('tuition-fee', 'th1', 'p1', 'Mongolian language program'),
+('tuition-fee', 'th1', 'p2', 'Undergraduate /Bachelor/'),
+('tuition-fee', 'th1', 'p3', 'Student exchange'),
+
+('tuition-fee', 'title1', 'th2', 'CREDITS /YEAR/'),
+('tuition-fee', 'th2', 'p1', '21'),
+('tuition-fee', 'th2', 'p2', '30'),
+('tuition-fee', 'th2', 'p3', '21-30'),
+
+('tuition-fee', 'title1', 'th3', 'COST PER CREDIT'),
+('tuition-fee', 'th3', 'p1', '478.000MNT'),
+('tuition-fee', 'th3', 'p2', '382.000MNT'),
+('tuition-fee', 'th3', 'p3', 'waivered'),
+
+('tuition-fee', 'title1', 'th4', 'TUITION FEE /YEAR/'),
+('tuition-fee', 'th3', 'p1', '10.038.000MNT'),
+('tuition-fee', 'th3', 'p2', '11.460.000MNT'),
+('tuition-fee', 'th3', 'p3', 'waivered'),
+
+-- Dormitory Fee
+('tuition-fee', 'Tuition-fee', 'title2', 'Dormitory Fee'),
+('tuition-fee', 'title2', 'th1', 'INTERNATIONAL STUDENT HOUSING'),
+('tuition-fee', 'th1', 'p1', '4th floor of building I, all floors of building 4'),
+('tuition-fee', 'title2', 'th2', 'ROOM CAPACITY'),
+('tuition-fee', 'th2', 'p1', '1 person'),
+('tuition-fee', 'th2', 'p2', '2 person'),
+('tuition-fee', 'th2', 'p3', '3 person'),
+('tuition-fee', 'title2', 'th3', 'Monthly Fee'),
+('tuition-fee', 'th3', 'p1', '467.000 MNT'),
+('tuition-fee', 'th3', 'p2', '234.000 MNT'),
+('tuition-fee', 'th3', 'p3', '159.000 MNT'),
+('tuition-fee', 'title2', 'th4', 'ANNUAL FEE'),
+('tuition-fee', 'th4', 'p1', '4.670.000 MNT'),
+('tuition-fee', 'th4', 'p2', '2.340.000 MNT'),
+('tuition-fee', 'th4', 'p3', '1.590.000 MNT'),
+('tuition-fee', 'title2', 'th5', 'ROOM CONDITION'),
+('tuition-fee', 'th5', 'p1', '~ 2 rooms in one block
+~ Shared bathroom between 2 rooms
+~ Painted floor without carpets'),
+('tuition-fee', 'title2', 'th6', 'ROOM FACILITIES'),
+('tuition-fee', 'th6', 'p1', '~ Bed
+~ Chair
+~ Desk
+~ Wardrobe
+~ Bed set
+~ Shared fridge'),
+('tuition-fee', 'title2', 'th7', 'COMMON FACILITIES'),
+('tuition-fee', 'th7', 'p1', '~ Shared kitchen
+~ Shower
+~ Laundry'),
+
+-- Other Expense
+('tuition-fee', 'Tuition-fee', 'title3', 'Other Expense'),
+('tuition-fee', 'title3', 'th1', 'Health Insurance'),
+('tuition-fee', 'th1', 'p1', 'International students are advised to buy international students health insurance from home country during study period in Mongolia. Mongolian National Health Insurance costs 105,000 MNT for one year and covers 10-15% of medical expenses. NUM organizes student medical health check-up annually within NUM Hospital.'),
+('tuition-fee', 'title3', 'th2', 'Public Transport'),
+('tuition-fee', 'th2', 'p1', 'NUM buildings are located right beside bus stops. Bus fare in Mongolia costs 500 MNT per ride. Passengers should obtain U-Money bus card.'),
+('tuition-fee', 'title3', 'th3', 'Transport'),
+('tuition-fee', 'th3', 'p1', 'Train ~ 300,000 MNT
+Plane ~ 1,200,000 MNT'),

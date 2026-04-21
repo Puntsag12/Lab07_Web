@@ -17,7 +17,7 @@ export const siteData = {
             title_2: "Competing in the world"
         },
         about: {
-            quote: '" We admire true knowledge, humanism and intelligence "',
+            quote: " We admire true knowledge, humanism and intelligence ",
             desc: "The National University of Mongolia founded in 1942 is the oldest university in Mongolia. Throughout more than seven decades NUM has played a fundamental role in creating, promoting and strengthening capacities in contemporary scientific research nationwide. The university has educated generations of professional community for the government, public sectors and industries in the country. Graduates of the NUM have had and will continue to play a leading role in the political, scientific, socio-economic, cultural and academic development of the nation. In the 21st century, the NUM remains"
         },
         branch: {
