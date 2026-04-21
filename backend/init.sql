@@ -15,6 +15,7 @@ CREATE TABLE IF NOT EXISTS university_stats (
 
 CREATE TABLE IF NOT EXISTS page_content (
     id INT AUTO_INCREMENT PRIMARY KEY,
+    page_name VARCHAR(50),
     section_name VARCHAR(50),
     content_key VARCHAR(50),
     content_value TEXT
@@ -29,4 +30,4 @@ INSERT INTO university_stats(category, value) values
 ('Partners', 320),
 ('Library Holdings', 360000);
 
-INSERT INTO 
+INSERT INTO page_content()
