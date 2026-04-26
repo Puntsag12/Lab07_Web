@@ -43,30 +43,30 @@
               <thead>
                 <tr>
                   <th data-key = "tuition-fee.Tuition.col_programs_title"></th>
-                  <th data-key = "tuition-fee.Tuition.program_item1"></th>
-                  <th data-key = "tuition-fee.Tuition.program_item2"></th>
-                  <th data-key = "tuition-fee.Tuition.program_item3"></th>
+                  <th data-key = "tuition-fee.Tuition.col_credits_title"></th>
+                  <th data-key = "tuition-fee.Tuition.col_cost_title"></th>
+                  <th data-key = "tuition-fee.Tuition.col_fee_title"></th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td data-key = "tuition-fee.Tuition.col_credits_title"></td>
+                  <td data-key = "tuition-fee.Tuition.program_item1"></td>
                   <td data-key = "tuition-fee.Tuition.credit_val1"></td>
                   <td data-key = "tuition-fee.Tuition.cost_val2"></td>
-                  <td data-key = "tuition-fee.Tuition.fee_val3"></td>
+                  <td data-key = "tuition-fee.Tuition.fee_val1"></td>
                 </tr>
                 <tr>
                   <td data-key = "tuition-fee.Tuition.program_item2"></td>
                   <td data-key = "tuition-fee.Tuition.credit_val2"></td>
-                  <td data-key = "tuition-fee.Tuition.cost_val2"></td>
+                  <td data-key = "tuition-fee.Tuition.cost_val1"></td>
                   <td data-key = "tuition-fee.Tuition.fee_val2"></td>
                 </tr>
                 <!-- Add remaining rows similarly -->
                 <tr>
-                  <td>Student exchange</td>
-                  <td>21-30</td>
-                  <td>waivered</td>
-                  <td>waivered</td>
+                  <td data-key = "tuition-fee.Tuition.program_item3"></td>
+                  <td data-key = "tuition-fee.Tuition.credit_val3"></td>
+                  <td data-key = "tuition-fee.Tuition.cost_val3"></td>
+                  <td data-key = "tuition-fee.Tuition.fee_val3"></td>
                 </tr>
               </tbody>
             </table>
@@ -79,50 +79,36 @@
             <table class="table border-top">
               <thead class="text-uppercase small fw-bold">
                 <tr>
-                  <th>International Student Housing</th>
-                  <th>Room Capacity</th>
-                  <th>Monthly Fee</th>
-                  <th>Annual Fee</th>
-                  <th>Room Condition</th>
-                  <th>Room Facilities</th>
-                  <th>Common Facilities</th>
+                  <th data-key = "tuition-fee.Dormitory.housing_title"></th>
+                  <th data-key = "tuition-fee.Dormitory.capacity_title"></th>
+                  <th data-key = "tuition-fee.Dormitory.monthly_title"></th>
+                  <th data-key = "tuition-fee.Dormitory.annual_title"></th>
+                  <th data-key = "tuition-fee.Dormitory.condition_title"></th>
+                  <th data-key = "tuition-fee.Dormitory.facilities_title"></th>
+                  <th data-key = "tuition-fee.Dormitory.common_title"></th>
                 </tr>
               </thead>
               <tbody class="align-middle">
                 <!-- Section 1 -->
                 <tr>
-                  <td rowspan="3">4th floor of building I, all floors of building 4</td>
-                  <td>1 person</td>
-                  <td>467.000 <small class="text-muted">MNT</small></td>
-                  <td>4.670.000 <small class="text-muted">MNT</small></td>
-                  <td rowspan="3">
-                    ~ 2 rooms in one block<br>
-                    ~ Shared bathroom between 2 rooms<br>
-                    ~ Painted floor without carpets
-                  </td>
-                  <td rowspan="3">
-                    ~ Bed<br>
-                    ~ Chair<br>
-                    ~ Desk<br>
-                    ~ Wardrobe<br>
-                    ~ Bed set<br>
-                    ~ Shared fridge
-                  </td>
-                  <td rowspan="3">
-                    ~ Shared kitchen<br>
-                    ~ Shower<br>
-                    ~ Laundry
+                  <td rowspan="3" data-key = "tuition-fee.Dormitory.housing_desc"></td>
+                  <td data-key = "tuition-fee.Dormitory.capacity_val1"></td>
+                  <td data-key = "tuition-fee.Dormitory.monthly_val1"><small class="text-muted">MNT</small></td>
+                  <td data-key = "tuition-fee.Dormitory.annual_val1"></td><small class="text-muted">MNT</small></td>
+                  <td  rowspan="3" data-key = "tuition-fee.Dormitory.condition_desc" data-type = "list"></td>
+                  <td rowspan="3" data-key = "tuition-fee.Dormitory.facilities_desc"></td>
+                  <td rowspan="3" data-key = "tuition-fee.Dormitory.common_desc" data-type = "list">
                   </td>
                 </tr>
                 <tr>
-                  <td>2 person</td>
-                  <td>234.000 <small class="text-muted">MNT</small></td>
-                  <td>2.340.400 <small class="text-muted">MNT</small></td>
+                  <td data-key = "tuition-fee.Dormitory.capacity_val2"></td>
+                  <td data-key = "tuition-fee.Dormitory.monthly_val2"><small class="text-muted">MNT</small></td>
+                  <td data-key = "tuition-fee.Dormitory.annual_val2"><small class="text-muted">MNT</small></td>
                 </tr>
                 <tr>
-                  <td>3 person</td>
-                  <td>159.000 <small class="text-muted">MNT</small></td>
-                  <td>1.590.000 <small class="text-muted">MNT</small></td>
+                  <td data-key = "tuition-fee.Dormitory.capacity_val3"></td>
+                  <td data-key = "tuition-fee.Dormitory.monthly_val3"><small class="text-muted">MNT</small></td>
+                  <td data-key = "tuition-fee.Dormitory.annual_val3"><small class="text-muted">MNT</small></td>
                 </tr>
               </tbody>
             </table>
@@ -138,26 +124,22 @@
             <tbody class="align-baseline">
               <!-- Health Insurance -->
               <tr class="border-bottom">
-                <td class="text-uppercase small fw-bold py-4" style="width: 25%;">Health Insurance</td>
-                <td class="py-4 text-muted">
-                  International students are advised to buy international student's health insurance from home country during study period in Mongolia. Mongolian National Health Insurance costs 105,000 MNT for one year and covers 10-15% of medical expenses. NUM organizes student medical health check-up annually within NUM Hospital.
+                <td class="text-uppercase small fw-bold py-4" style="width: 25%;" data-key = "tuition-fee.Others.main_title"></td>
+                <td class="py-4 text-muted" data-key = "tuition-fee.Others.insurance_desc">
                 </td>
               </tr>
 
               <!-- Public Transport -->
               <tr class="border-bottom">
-                <td class="text-uppercase small fw-bold py-4">Public Transport</td>
-                <td class="py-4 text-muted">
-                  NUM buildings are located right beside bus stops. Bus fare in Mongolia costs 500 MNT per ride. Passengers should obtain U-Money bus card.
+                <td class="text-uppercase small fw-bold py-4" data-key = "tuition-fee.Others.public_transport_title"></td>
+                <td class="py-4 text-muted" data-key = "tuition-fee.Others.public_transport_desc">
                 </td>
               </tr>
 
               <!-- Transport -->
               <tr class="border-bottom">
-                <td class="text-uppercase small fw-bold py-4">Transport</td>
-                <td class="py-4 text-muted">
-                  Train ~ 300,000 MNT <br>
-                  Plane ~ 1,200,000 MNT
+                <td class="text-uppercase small fw-bold py-4" data-key = "tuition-fee.Others.transport_title"></td>
+                <td class="py-4 text-muted" data-key = "tuition-fee.Others.transport_desc" data-type = "list">
                 </td>
               </tr>
               
