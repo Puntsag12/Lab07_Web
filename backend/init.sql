@@ -62,15 +62,11 @@ INSERT INTO page_content (page_name, section_name, content_key, content_value) V
 ('about_num', 'AboutVision', 'mission_title', 'MISSION'),
 ('about_num', 'AboutVision', 'mission_desc', 'The mission of the National University of Mongolia is an academic institution with the goal of disseminating knowledge by its sustained research and teaching in natural science, issues of socio-economic development based on the curriculum characterized by the liberal arts tradition.'),
 ('about_num', 'AboutVision', 'values_title', 'VALUES'),
-('about_num', 'AboutVision', 'li1', 'Academic freedom'),
-('about_num', 'AboutVision', 'li2', 'Choice and competition'),
-('about_num', 'AboutVision', 'li3', 'Social responsibility'),
-('about_num', 'AboutVision', 'li4', 'Good governance'),
-('about_num', 'AboutVision', 'li5', 'Tradition and innovation'),
+('about_num', 'AboutVision', 'values_desc', 'Academic freedom. ~ Choice and competition. ~ Social responsibility. ~ Good governance. ~ Tradition and innovation'),
 
 -- Programs huudasnii text
-('programs', 'programs', 'header', 'title', 'Academic Programs'),
-('programs', 'programs', 'intro', 'desc', 'NUM offers a wide range of undergraduate and graduate programs across various disciplines.'),
+('programs', 'programs', 'header', 'Academic Programs'),
+('programs', 'programs', 'intro', 'NUM offers a wide range of undergraduate and graduate programs across various disciplines.'),
 
 -- Programs huudasnii text
 ('programs', 'Programs', 'undergrad_title', 'Undergraduate'),
@@ -83,30 +79,19 @@ INSERT INTO page_content (page_name, section_name, content_key, content_value) V
 ('programs', 'Programs', 'nondegree_desc', 'The Department of Mongolian language and culture provides a Mongolian language program for exchange students who wish to improve their Mongolian language, explore'),
 ('programs', 'Programs', 'exchange_title', 'Exchange'),
 ('programs', 'Programs', 'exchange_desc', 'Suppose nominated students intend to take lectures and courses in an undergraduate program (please keep in mind that the majority of the lectures and courses are held in Mongolian).'),
-
+('programs', 'Programs', 'applicantmust', 'Applicant must:'),
 -- Programs huudasnii undergraduate more text
 -- Vndsen garchig
 ('undergraduate', 'Undergraduate', 'page_title', 'Undergraduate programs'),
 
 -- Applicant must
 ('undergraduate', 'Undergraduate', 'admission_req_title', 'ADMISSION REQUIREMENTS'),
-('undergraduate', 'Undergraduate', 'li1', 'Be foreign nationals.'),
-('undergraduate', 'Undergraduate', 'li2', 'Be in good health.'),
-('undergraduate', 'Undergraduate', 'li3', 'Have graduated from their high school education.'),
+('undergraduate', 'Undergraduate', 'li1', 'Be foreign nationals. ~ Be in good health. ~ Have graduated from their high school education.'),
 
 -- Required documents
 ('undergraduate', 'Undergraduate', 'required_docs_title', 'REQUIRED DOCUMENTS'),
-('undergraduate', 'Undergraduate', 'docs_online_app', 'Online application'),
-('undergraduate', 'Undergraduate', 'docs_passport', 'Passport copy (valid for at least 1 year; scanned directly from the original passport using a copy machine; ensure the image is clear and not tilted; JPEG format)'),
-('undergraduate', 'Undergraduate', 'docs_photo', 'ID photo that is a personal photograph, not a photo of your ID card (JPEG or PNG format with a plain white background, contrasting clothing, full face visible without glasses or contact lenses; size: 3.5 x 4.5 cm)'),
-('undergraduate', 'Undergraduate', 'docs_finance', 'Proof of financial support (a bank statement or balance certificate in your name, showing sufficient amount to cover tuition and dormitory fees for one year), submitted in Mongolian or English.'),
-('undergraduate', 'Undergraduate', 'docs_pledge', 'International Student Pledge (downloadable from the application form)'),
-('undergraduate', 'Undergraduate', 'docs_fee', 'Bank receipt for the admission fee (Transfer 50 USD to GOLOMT BANK, bank account number 1102927753 (international transaction), or transfer 171.600 MNT to GOLOMT BANK, bank account number 1102927741 (for domestic transfer))'),
-('undergraduate', 'Undergraduate', 'docs_diploma', 'Academic diploma and transcript of secondary education/ high school (when visiting NUM, notarized copies of the diploma and transcript will be required for final registration)'),
-('undergraduate', 'Undergraduate', 'docs_translation', 'Official translation of academic diploma and transcript into Mongolian (when visiting NUM, original translation of the diploma and transcript will be required for final registration)'),
-('undergraduate', 'Undergraduate', 'docs_language', 'Proof of Mongolian language proficiency or TOMFL certificate (optional)'),
-('undergraduate', 'Undergraduate', 'req_note', 'Please upload all required documents. If any document is missing or not properly uploaded, your application will not proceed further.'),
-
+('undergraduate', 'Undergraduate', 'required_docs_list', 'Online application. ~ Passport copy (valid for at least 1 year; scanned directly from the original passport using a copy machine; ensure the image is clear and not tilted; JPEG format) ~ ID photo that is a personal photograph, not a photo of your ID card (JPEG or PNG format with a plain white background, contrasting clothing, full face visible without glasses or contact lenses; size: 3.5 x 4.5 cm) ~ Proof of financial support (a bank statement or balance certificate in your name, showing sufficient amount to cover tuition and dormitory fees for one year), submitted in Mongolian or English. ~ International Student Pledge (downloadable from the application form) ~ Bank receipt for the admission fee (Transfer 50 USD to GOLOMT BANK, bank account number 1102927753 (international transaction), or transfer 171.600 MNT to GOLOMT BANK, bank account number 1102927741 (for domestic transfer)) ~ Academic diploma and transcript of secondary education/ high school (when visiting NUM, notarized copies of the diploma and transcript will be required for final registration) ~ Official translation of academic diploma and transcript into Mongolian (when visiting NUM, original translation of the diploma and transcript will be required for final registration) ~ Proof of Mongolian language proficiency or TOMFL certificate (optional). ~ Please upload all required documents. If any document is missing or not properly uploaded, your application will not proceed further.'),
+('undergraduate', 'required_docs', 'note', 'Please upload all required documents. If any document is missing or not properly uploaded, your application will not proceed further.'),
 -- Language requirement
 ('undergraduate', 'Undergraduate', 'language_req_title', 'LANGUAGE REQUIREMENT'),
 ('undergraduate', 'Undergraduate', 'language_req_text', 'Applicants must pass the Mongolian language test offered by NUM or submit a TOMFL (Test of Mongolian as a Foreign Language) certificate.'),
@@ -149,14 +134,15 @@ INSERT INTO page_content (page_name, section_name, content_key, content_value) V
 -- application period
 ('nonDegree', 'Non-degree', 'application_period_title', 'ONLINE APPLICATION PERIOD'),
 ('nonDegree', 'Non-degree', 'period_fall', 'Fall semester: May 1st - July 1st (each year)'),
-('nonDegree', 'Non-degree', 'period_spring', 'Spring semester: October 1st - December 1st (each year)');
+('nonDegree', 'Non-degree', 'period_spring', 'Spring semester: October 1st - December 1st (each year)'),
 
 -- Programs huudasnii Master more text
 -- Vndsen garchig
 ('master', 'Master', 'page_title', 'Master programs'),
 
---Admission requirements
+-- Admission requirements
 ('master', 'Master', 'admission_req_title', 'ADMISSION REQUIREMENTS'),
+('master', 'Master', 'applicantmust', 'Applicant must'),
 ('master', 'Master', 'li1', 'Hold a bachelor’s degree (some majors, such as psychology and law, require a bachelor’s degree in the same field).'),
 ('master', 'Master', 'li2', 'Be foreign nationals.'),
 ('master', 'Master', 'li3', 'Be in good health.'),
@@ -188,7 +174,7 @@ INSERT INTO page_content (page_name, section_name, content_key, content_value) V
 -- application period
 ('master', 'Master', 'application_period_title', 'ONLINE APPLICATION PERIOD'),
 ('master', 'Master', 'period_fall', 'Fall semester: May 1st - July 1st (each year)'),
-('master', 'Master', 'period_spring', 'Spring semester: October 1st - December 1st (each year)');
+('master', 'Master', 'period_spring', 'Spring semester: October 1st - December 1st (each year)'),
 
 -- Programs huudasnii Exchange more text
 -- Vndsen garchig
@@ -284,10 +270,12 @@ INSERT INTO page_content (page_name, section_name, content_key, content_value) V
 ('campus', 'Housing2', 'monthly1', '584.000 MNT'),
 ('campus', 'Housing2', 'annual1', '5.840.000 MNT'),
 ('campus', 'Housing2', 'capacity2', '2 person'),
-('campus', 'Housing2', 'monthly2', '2.920.000 MNT'),
+('campus', 'Housing2', 'monthly2', '292.000 МНТ'),
+('campus', 'Housing2', 'annual2', '2.920.000 MNT'),
+
 
 -- Room condition
-('campus', 'room_condition', 'title', 'Room contidion')
+('campus', 'room_condition', 'title', 'Room condition'),
 ('campus', 'room_condition', 'li1', 'two rooms in one block'),
 ('campus', 'room_condition', 'li2', 'shared bathroom (between 2 rooms)'),
 ('campus', 'room_condition', 'li3', 'painted floor withour carpet'),
@@ -377,9 +365,9 @@ INSERT INTO page_content (page_name, section_name, content_key, content_value) V
 ('tuition-fee', 'th3', 'p3', 'waivered'),
 
 ('tuition-fee', 'title1', 'th4', 'TUITION FEE /YEAR/'),
-('tuition-fee', 'th3', 'p1', '10.038.000MNT'),
-('tuition-fee', 'th3', 'p2', '11.460.000MNT'),
-('tuition-fee', 'th3', 'p3', 'waivered'),
+('tuition-fee', 'th4', 'p1', '10.038.000MNT'),
+('tuition-fee', 'th4', 'p2', '11.460.000MNT'),
+('tuition-fee', 'th4', 'p3', 'waivered'),
 
 -- Dormitory Fee
 ('tuition-fee', 'Tuition-fee', 'title2', 'Dormitory Fee'),
@@ -398,20 +386,11 @@ INSERT INTO page_content (page_name, section_name, content_key, content_value) V
 ('tuition-fee', 'th4', 'p2', '2.340.000 MNT'),
 ('tuition-fee', 'th4', 'p3', '1.590.000 MNT'),
 ('tuition-fee', 'title2', 'th5', 'ROOM CONDITION'),
-('tuition-fee', 'th5', 'p1', '~ 2 rooms in one block
-~ Shared bathroom between 2 rooms
-~ Painted floor without carpets'),
+('tuition-fee', 'th5', 'p1', '~ 2 rooms in one block ~ Shared bathroom between 2 rooms ~ Painted floor without carpets'),
 ('tuition-fee', 'title2', 'th6', 'ROOM FACILITIES'),
-('tuition-fee', 'th6', 'p1', '~ Bed
-~ Chair
-~ Desk
-~ Wardrobe
-~ Bed set
-~ Shared fridge'),
+('tuition-fee', 'th6', 'p1', '~ Bed ~ Chair ~ Desk ~ Wardrobe ~ Bed set ~ Shared fridge'),
 ('tuition-fee', 'title2', 'th7', 'COMMON FACILITIES'),
-('tuition-fee', 'th7', 'p1', '~ Shared kitchen
-~ Shower
-~ Laundry'),
+('tuition-fee', 'th7', 'p1', '~ Shared kitchen ~ Shower ~ Laundry'),
 
 -- Other Expense
 ('tuition-fee', 'Tuition-fee', 'title3', 'Other Expense'),
@@ -420,5 +399,4 @@ INSERT INTO page_content (page_name, section_name, content_key, content_value) V
 ('tuition-fee', 'title3', 'th2', 'Public Transport'),
 ('tuition-fee', 'th2', 'p1', 'NUM buildings are located right beside bus stops. Bus fare in Mongolia costs 500 MNT per ride. Passengers should obtain U-Money bus card.'),
 ('tuition-fee', 'title3', 'th3', 'Transport'),
-('tuition-fee', 'th3', 'p1', 'Train ~ 300,000 MNT
-Plane ~ 1,200,000 MNT'),
+('tuition-fee', 'th3', 'p1', 'Train ~ 300,000 MNT  Plane ~ 1,200,000 MNT');

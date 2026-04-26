@@ -1,31 +1,41 @@
 
-
+# biy daasan container todorhoilno.
 services:
   db:
+    # MySQL-iin 8.0 huwilbariin image ashiglana.
     image: mysql:8.0
+    # Herew container untarwal automataar butsaj asna.
     restart: always
+    # Ugugdliin sangiin anhnii tohirgoonuud
     environment:
       MYSQL_DATABASE: num_db
       MYSQL_ROOT_PASSWORD: root_password
     ports:
+    # Container dotorh 3306 portig gadnah 3307 porttoi holbono.
       - "3307:3306"
     volumes:
+      # Container ustsanch ugugdul hadgalj vldene.
       - db_data:/var/lib/mysql
+      # Container asah vyd ni automataar init.sql-iig unshina.
       - ./backend/init.sql:/docker-entrypoint-initdb.d/init.sql
 
   backend:
     build: ./backend
     ports:
+      # Flask-iin 5000 portiig gadagsh gargana.
       - "5000:5000"
+    # Container bvren assanii daraa l web server asna gesen vg.
     depends_on:
       - db
     volumes:
+      # Python codend uurchlult oruulahad container-g dahin asaah shaardlagagvi6
       - ./backend:/app
+      # HTML, CSS, JS file-uudig server dotorh hawtastai holbono.
       - ./src:/app/src
     environment:
       - DB_HOST=db
       - DB_NAME=num_db
       - DB_PASS=root_password
-
+# Ugugdliin sangiin file-uudig container-s tusdaa hadgalah zoriulalttai virtual disc vvsgej baigaa.
 volumes:
   db_data:

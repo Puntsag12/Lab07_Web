@@ -1,7 +1,6 @@
 from flask import Flask, jsonify, request, send_from_directory
 from flask_cors import CORS
 import mysql.connector
-import os
 
 app = Flask(__name__, static_folder='/app/src')
 CORS(app)
@@ -30,18 +29,6 @@ def admin_page():
 def static_proxy(path):
     return send_from_directory(app.static_folder, path)
 
-@app.route('/api/content', methods = ['GET'])
-def get_content():
-    try:
-        conn = get_db_connection()
-        cursor = conn.cursor(dictionary=True)
-        cursor.execute("SELECT * FROM page_content")
-        data = cursor.fetchall()
-        cursor.close()
-        conn.close()
-        return jsonify(data)
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
     
 # Statistic ugugdul CRUD
 @app.route('/api/stats', methods=['GET'])
