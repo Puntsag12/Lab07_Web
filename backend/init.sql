@@ -213,6 +213,7 @@ INSERT INTO page_content (page_name, section_name, content_key, content_value) V
 
 -- Application must
 ('doctor', 'Doctor', 'admission_req_title', 'ADMISSION REQUIREMENTS'),
+('doctor', 'Doctor', 'apllicantmust', 'applicantmust:'),
 ('doctor', 'Doctor', 'li1', 'Hold both a Bachelor’s and a Master’s degree (for some majors, such as psychology and law, both degrees must be in the same field).'),
 ('doctor', 'Doctor', 'li2', 'Be foreign nationals.'),
 ('doctor', 'Doctor', 'li3', 'Be in good health.'),
