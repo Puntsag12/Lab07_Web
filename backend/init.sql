@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS page_content (
 
 INSERT INTO university_stats (category, value) VALUES 
 ('Undergraduate Student', 15749),
-('Master\'s and Doctorate Students', 4172),
+('Master\s and Doctorate Students', 4172),
 ('Teachers and Employees', 1445),
 ('Foreign Student', 510),
 ('Schools', 6),
@@ -34,7 +34,7 @@ INSERT INTO university_stats (category, value) VALUES
 INSERT INTO page_content (page_name, section_name, content_key, content_value) VALUES
 ('index', 'hero', 'title_1', 'Leading Mongolia'),
 ('index', 'hero', 'title_2', 'Competing in the world'),
-('index', 'about', 'quote', '" We admire true knowledge, humanism and intelligence "'),
+('index', 'about', 'quote', ' We admire true knowledge, humanism and intelligence '),
 ('index', 'about', 'desc', 'The National University of Mongolia founded in 1942 is the oldest university in Mongolia. Throughout more than seven decades NUM has played a fundamental role in creating, promoting and strengthening capacities in contemporary scientific research nationwide. The university has educated generations of professional community for the government, public sectors and industries in the country. Graduates of the NUM have had and will continue to play a leading role in the political, scientific, socio-economic, cultural and academic development of the nation. In the 21st century, the NUM remains'),
 ('index', 'title', 'law', 'School of Law'),
 ('index', 'branch', 'school_of_law', 'Our mission is to preserve its leading position in legal academic studies and legal profession and knowledge, to uphold rule of law and equity, and prepare and educate the best legal professionals with capacity to complete on national and international realm.'),
@@ -56,7 +56,7 @@ INSERT INTO page_content (page_name, section_name, content_key, content_value) V
 ('about_num', 'AboutMain', 'p5', 'The NUM promotes mutually beneficial international cooperation. The university is a member of the International Association of Universities (IAU), University Mobility in Asia and Pacific (UMAP) and the Eurasia Pacific University Network.'),
 
 -- Vision, Mission, Values text
-('about_num', 'AboutVision', 'quote', '" We admire true knowledge, humanism and intelligence "'),
+('about_num', 'AboutVision', 'quote', ' We admire true knowledge, humanism and intelligence '),
 ('about_num', 'AboutVision', 'vision_title', 'VISION'),
 ('about_num', 'AboutVision', 'vision_desc', 'We aim to become a national model research university which meets world standards and provides pillars for the development of Mongolia.'),
 ('about_num', 'AboutVision', 'mission_title', 'MISSION'),
@@ -143,7 +143,7 @@ INSERT INTO page_content (page_name, section_name, content_key, content_value) V
 -- Admission requirements
 ('master', 'Master', 'admission_req_title', 'ADMISSION REQUIREMENTS'),
 ('master', 'Master', 'applicantmust', 'Applicant must'),
-('master', 'Master', 'li1', 'Hold a bachelor\'s degree (some majors, such as psychology and law, require a bachelor\'s degree in the same field).'),
+('master', 'Master', 'li1', 'Hold a bachelor\s degree (some majors, such as psychology and law, require a bachelor\s degree in the same field).'),
 ('master', 'Master', 'li2', 'Be foreign nationals.'),
 ('master', 'Master', 'li3', 'Be in good health.'),
 
@@ -250,7 +250,7 @@ INSERT INTO page_content (page_name, section_name, content_key, content_value) V
 -- CAMPUS
 ('campus', 'Campus', 'title', 'Campus life'),
 ('campus', 'Campus', 'accommodation', 'Accommodation'),
-('campus', 'Campus', 'p1', 'There are five student dormitories - one for international students and scholars with capacity of 160 persons and four others for local students with capacity of 1200 persons. Students from different countries spend their joyful and challenging years of their student\'s life with their common goal of studying there. It is a safe place to live and rooms are furnished. Student affairs and complaints are resolved by a dormitory manager.'),
+('campus', 'Campus', 'p1', 'There are five student dormitories - one for international students and scholars with capacity of 160 persons and four others for local students with capacity of 1200 persons. Students from different countries spend their joyful and challenging years of their student\s life with their common goal of studying there. It is a safe place to live and rooms are furnished. Student affairs and complaints are resolved by a dormitory manager.'),
 ('campus', 'Campus', 'p2', 'International students contact the Student and Alumni Affairs office and the Registrar Office in advance to arrange a room at the dormitory. As the dormitory for international students has limited number of rooms, earlier booking is advised. The dormitory is guaranteed for government funded students and incoming exchange students. The dormitory is guaranteed for government funded students and inbound exchange students. There are five student dormitories - one for international students and scholars with capacity of 160 persons and four others for local students with capacity of 1200 persons. It is a safe place to live and rooms are well equipped with bed, tables, desks, internet access. Dormitory manager supports a variety of orientation and counseling services.'),
 ('campus', 'Housing', 'th1', 'International Student Housing'),
 ('campus', 'Room', 'th2', 'Room capacity'),
@@ -355,7 +355,7 @@ INSERT INTO page_content (page_name, section_name, content_key, content_value) V
 
 -- Visa permit transfer
 ('visa', 'Visa', 'title7', 'Visa permit transfer'),
-('visa', 'title7', 'p1', 'Foreigners enrolled in the NUM non-degree program will not be transferred to another school, and please note that the NUM\'s invitation will be revoked if you decide to transfer'),
+('visa', 'title7', 'p1', 'Foreigners enrolled in the NUM non-degree program will not be transferred to another school, and please note that the NUM\s invitation will be revoked if you decide to transfer'),
 
 -- Tuition Fee (Section: Tuition)
 ('tuition-fee', 'Tuition', 'main_title', 'Tuition Fee'),

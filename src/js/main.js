@@ -4,10 +4,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     async function loadData() {
         try {
             // Flask API-аас өгөгдөл татах
-            const response = await fetch('http://localhost:5000/api/content');
+            const response = await fetch('http://localhost:5001/api/content');
             const rawData = await response.json();
 
-            const statsRes = await fetch('http://localhost:5000/api/stats');
+            const statsRes = await fetch('http://localhost:5001/api/stats');
             const statsData = await statsRes.json();
 
             // SQL-ээс ирсэн жагсаалтыг (Array) main.js-ийн таньдаг бүтэц рүү хөрвүүлэх

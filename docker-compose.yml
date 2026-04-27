@@ -23,7 +23,7 @@ services:
     build: ./backend
     ports:
       # Flask-iin 5000 portiig gadagsh gargana.
-      - "5000:5000"
+      - "5001:5000"
     # Container bvren assanii daraa l web server asna gesen vg.
     depends_on:
       - db
